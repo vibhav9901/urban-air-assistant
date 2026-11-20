@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Clean Air Planner – Urban Air Quality Assistant</title>
+  <meta name="description" content="Live air quality turned into a personalised low-emission daily plan for your family.">
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="app.js"></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to main content</a>
+  <header><h1>Clean Air Planner</h1><p>Smog-smart routines for your household, based on live air quality in your city.</p></header>
+  <main id="main">
+    <form id="form" novalidate>
+      <div class="field">
+        <label for="city">Your city</label>
+        <input id="city" name="city" type="text" required maxlength="80" autocomplete="address-level2" aria-describedby="city-hint">
+        <p id="city-hint" class="hint">For example: Delhi, Lahore, Beijing, Ongole.</p>
+      </div>
+      <fieldset><legend>Who needs extra protection?</legend>
+        <label><input type="checkbox" name="health" value="children"> Young children</label>
+        <label><input type="checkbox" name="health" value="elderly"> Older adults</label>
+        <label><input type="checkbox" name="health" value="respiratory"> Asthma / heart / lung conditions</label>
+        <label><input type="checkbox" name="health" value="pregnant"> Pregnancy</label>
+      </fieldset>
+      <div class="field">
+        <label for="commute">Main way you travel</label>
+        <select id="commute" name="commute">
+          <option value="transit">Public transport</option><option value="walk">Walking</option>
+          <option value="bike">Bicycle</option><option value="two-wheeler">Motorbike / scooter</option>
+          <option value="car">Car</option><option value="remote">Mostly at home</option>
+        </select>
+      </div>
+      <fieldset><legend>At home</legend>
+        <label><input type="checkbox" name="home" value="no-purifier"> No air purifier</label>
+        <label><input type="checkbox" name="home" value="gas-stove"> Gas stove</label>
+        <label><input type="checkbox" name="home" value="biomass-heating"> Wood / coal / biomass heating</label>
+        <label><input type="checkbox" name="home" value="incense"> Incense or mosquito coils</label>
+      </fieldset>
+      <button type="submit" id="go">Get my plan</button>
+    </form>
+    <p id="status" role="status" aria-live="polite"></p>
+    <section id="results" tabindex="-1" aria-labelledby="r-title" hidden></section>
+  </main>
+  <footer><p>Data: Open-Meteo (CAMS). Guidance is general information, not medical advice.</p></footer>
+</body>
+</html>

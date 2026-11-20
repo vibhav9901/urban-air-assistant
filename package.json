@@ -1,0 +1,10 @@
+{
+  "name": "urban-air-quality-assistant",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "GenAI assistant that turns live air-quality data into low-emission routines for families.",
+  "engines": { "node": ">=20" },
+  "scripts": { "test": "node --test" },
+  "license": "MIT"
+}
