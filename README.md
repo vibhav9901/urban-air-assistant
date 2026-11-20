@@ -1,7 +1,29 @@
 # Clean Air Planner – Urban Air Quality Assistant (Challenge 6)
 
-**Vertical:** families and communities coping with severe winter smog.
-Enter a city, tick who needs protection, how you travel and what's in your home. You get a ranked daily plan, and each step explains its **direct impact**.
+[![Live Demo](https://img.shields.io/badge/Live_Demo-Vercel-black?style=for-the-badge&logo=vercel)](https://urban-air-assistant-one.vercel.app/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
+
+> **Live Deployment:** [https://urban-air-assistant-one.vercel.app/](https://urban-air-assistant-one.vercel.app/)
+
+![Clean Air Planner Banner](./clean-air-planner-banner.jpg)
+
+**Vertical:** Families and communities coping with severe urban air pollution and winter smog.
+Enter a city, specify who needs protection, how you travel, and indoor appliances. You get a prioritized, context-driven daily routine where each recommendation details its **quantified direct impact**.
+
+---
+
+## 🛠️ Tech Stack
+
+| Layer | Technology | Details |
+| :--- | :--- | :--- |
+| **Frontend** | Vanilla HTML5 / CSS3 / Modern JS | Accessible semantic markup, auto dark-mode, reduced motion, 0 bundle dependencies |
+| **Backend & Compute** | Vercel Serverless Functions | Node.js 20+ ES Modules (`api/advice.js`), in-memory grid caching, rate limiting |
+| **GenAI Service** | Google Gemini API (`gemini-2.5-flash`) | Concise public health narrative synthesis, prompt-injection immune design |
+| **Air Quality Telemetry** | Open-Meteo APIs (CAMS model) | Real-time global geocoding + US AQI & PM2.5 data (no user tracking) |
+| **Test Runner** | Native Node Test Suite (`node:test`) | Unit tests for EPA band boundaries, decision logic, and security validation |
+| **Deployment** | Vercel | Strict Content-Security-Policy (CSP), HSTS, nosniff headers |
+
+---
 
 ## How it works
 1. `POST /api/advice` validates input against strict allow-lists (`lib/validate.js`).
